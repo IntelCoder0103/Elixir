@@ -1,0 +1,9 @@
+<h1>Listing Users</h1>
+<table>
+  <%= for user <- @users do %>
+    <tr>
+      <td><b><%= first_name(user) %></b> (<%= user.id %>)</td>
+      <td><%= Phoenix.HTML.Link.link("View", to: "/users/#{user.id}") %></td>
+    </tr>
+  <%= end %>
+</table>
